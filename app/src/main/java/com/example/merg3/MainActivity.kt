@@ -23,8 +23,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         merge(
-            videoPath = File(this.cacheDir, "fb_20230819_053037.mp4").path,
-            audioPath = File(this.cacheDir, "fb_20230819_053046.mp3").path,
+            videoPath = File(this.cacheDir, "vid.mp4").path,
+            audioPath = File(this.cacheDir, "aud.mp3").path,
             context = this
         )
 
@@ -73,7 +73,7 @@ private fun merge(
     val editedMediaItem = EditedMediaItem.Builder(inputMediaItem).build()
     val transformer = Transformer.Builder(context)
         .setTransformationRequest(
-            TransformationRequest.Builder().setVideoMimeType(MimeTypes.VIDEO_H265).build()
+            TransformationRequest.Builder().setVideoMimeType(MimeTypes.VIDEO_H264).build()
         )
         .addListener(transformerListener) // if changing the codec works -> merge it with the audio
         .build()
