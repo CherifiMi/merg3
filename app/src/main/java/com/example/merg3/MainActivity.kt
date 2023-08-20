@@ -73,7 +73,7 @@ private fun merge(
     val editedMediaItem = EditedMediaItem.Builder(inputMediaItem).build()
     val transformer = Transformer.Builder(context)
         .setTransformationRequest(
-            TransformationRequest.Builder().setVideoMimeType(MimeTypes.VIDEO_H264).build()
+            TransformationRequest.Builder().setVideoMimeType(MimeTypes.VIDEO_H265).build()
         )
         .addListener(transformerListener) // if changing the codec works -> merge it with the audio
         .build()
